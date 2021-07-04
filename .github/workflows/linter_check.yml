@@ -11,4 +11,4 @@ jobs:
         run: |
           pip install poetry
           make install
-          make init
+          make lint
