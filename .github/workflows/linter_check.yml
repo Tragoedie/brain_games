@@ -1,0 +1,13 @@
+name: linter_check
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run_linter
+        run: |
+          pip install poetry
+          make install
+          make init
