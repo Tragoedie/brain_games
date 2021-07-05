@@ -3,3 +3,4 @@
 
 <a href="https://codeclimate.com/github/Tragoedie/python-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/c380240f94425c252b49/maintainability" /></a>
 
+[![linter_check](https://github.com/Tragoedie/python-project-lvl1/actions/workflows/linter_check.yml/badge.svg)](https://github.com/Tragoedie/python-project-lvl1/actions/workflows/linter_check.yml)
