@@ -41,4 +41,3 @@ def end_game(name_user, is_parity, user_answer):
 
 def parity_check(number):
     return number % 2 == 0
-
