@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+
 import random
+
 import prompt
 from brain_games.scripts.brain_games import main_two
 
@@ -13,7 +15,7 @@ def main():
         if right_answer:
             counter_right_answer += 1
         else:
-            break
+            return
     print('Congratulations, {0}!'.format(name_user))
 
 

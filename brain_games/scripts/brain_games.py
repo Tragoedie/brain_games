@@ -9,4 +9,4 @@ def main_two():
 
 
 if __name__ == '__main__':
-    main_two()
+    main = main_two()
