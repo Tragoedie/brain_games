@@ -1,17 +1,44 @@
-import prompt
+"""This is the common games logic."""
+from random import randint
+
 from brain_games.scripts.brain_games import main_two
+from prompt import string
 
 
 def ask_user_name_and_greeting():
+    """Ask user name and greeting.
+
+    Returns:
+        basestring: user name.
+    """
     return main_two()
 
 
 def ask_question_and_get_answer(data_for_question):
+    """Print question in console and get user answer.
+
+    Parameters:
+        data_for_question (string): game question to user.
+
+    Returns:
+        basestring: user answer.
+    """
     print('Question: {0}'.format(data_for_question))
-    return prompt.string('Your answer: ')
+    return string('Your answer: ')
 
 
 def is_win_or_not(name_user, counter, correct_answer, user_answer):
+    """Check if game is finished.
+
+    Parameters:
+        name_user (string): user name.
+        correct_answer (string): correct answer, calculated by game.
+        user_answer (string): user's answer.
+        counter (int): counter of correct given answers.
+
+    Returns:
+        bool: is game finished?
+    """
     right_answer = is_right_answer(name_user, correct_answer, user_answer)
     if right_answer is False:
         return True, counter
@@ -22,6 +49,16 @@ def is_win_or_not(name_user, counter, correct_answer, user_answer):
 
 
 def is_right_answer(name_user, corr_answer, user_answer):
+    """Check if user answer is correct.
+
+    Parameters:
+        name_user (string): user name.
+        corr_answer (string): correct answer, calculated by game.
+        user_answer (string): user's answer.
+
+    Returns:
+        bool: is answer correct?
+    """
     if corr_answer == user_answer:
         print('Correct!')
         return True
@@ -29,3 +66,16 @@ def is_right_answer(name_user, corr_answer, user_answer):
     print(f'Correct answer was "{corr_answer}".')
     print(f"Let's try again, {name_user}!")
     return False
+
+
+def get_random_number(left_border=1, right_border=100):
+    """Get random number.
+
+    Parameters:
+        left_border (int): left border.
+        right_border (int): right border.
+
+    Returns:
+        integer number: random number
+    """
+    return randint(left_border, right_border)
