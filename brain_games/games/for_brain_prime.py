@@ -17,7 +17,7 @@ def is_prime():
     """
     number = get_random_number()
     if number % 2 == 0:
-        return 'no'
+        return number, 'no'
     step = 3
     while step * step <= number and number % step != 0:
         step += 2
