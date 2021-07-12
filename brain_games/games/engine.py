@@ -2,7 +2,6 @@
 from random import randint
 
 from brain_games.scripts.brain_games import main_two
-from prompt import string
 
 
 def brain_game_logic(start_str, game_function):

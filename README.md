@@ -6,19 +6,19 @@
 [![linter_check](https://github.com/Tragoedie/python-project-lvl1/actions/workflows/linter_check.yml/badge.svg)](https://github.com/Tragoedie/python-project-lvl1/actions/workflows/linter_check.yml)
 
 game install
-https://asciinema.org/a/1s698XKJcR8bmlBdt86xvvSm9
+<a href="https://asciinema.org/a/1s698XKJcR8bmlBdt86xvvSm9" target="_blank"><img src="https://asciinema.org/a/1s698XKJcR8bmlBdt86xvvSm9.svg" /></a>
 
 brain-even
-https://asciinema.org/a/KW0mJ9ZxlNVCjUfxd4BHVJfDQ
+<a href="https://asciinema.org/a/KW0mJ9ZxlNVCjUfxd4BHVJfDQ" target="_blank"><img src="https://asciinema.org/a/KW0mJ9ZxlNVCjUfxd4BHVJfDQ.svg" /></a>
 
 brain-calc
-https://asciinema.org/a/DT5aFInNqDzAK77hs3jyQSfp7
+<a href="https://asciinema.org/a/DT5aFInNqDzAK77hs3jyQSfp7" target="_blank"><img src="https://asciinema.org/a/DT5aFInNqDzAK77hs3jyQSfp7.svg" /></a>
 
 brain-gcd
-https://asciinema.org/a/VdugEpj1Qeeexgj2yu7toJ1qH
+<a href="https://asciinema.org/a/VdugEpj1Qeeexgj2yu7toJ1qH" target="_blank"><img src="https://asciinema.org/a/VdugEpj1Qeeexgj2yu7toJ1qH.svg" /></a>
 
 brain-progression
-https://asciinema.org/a/TENHIhieYelAZeEeVIMACpzNn
+<a href="https://asciinema.org/a/TENHIhieYelAZeEeVIMACpzNn" target="_blank"><img src="https://asciinema.org/a/TENHIhieYelAZeEeVIMACpzNn.svg" /></a>
 
 brain-prime
-https://asciinema.org/a/T1zW675wTj6YEHDwgjdlNomuB
+<a href="https://asciinema.org/a/T1zW675wTj6YEHDwgjdlNomuB" target="_blank"><img src="https://asciinema.org/a/T1zW675wTj6YEHDwgjdlNomuB.svg" /></a>
