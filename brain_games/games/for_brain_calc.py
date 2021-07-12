@@ -16,13 +16,13 @@ def generate_expression():
     Returns:
         basestring: returns expression with result.
     """
-    number_one = get_random_number()
-    number_two = get_random_number()
+    numb_one = get_random_number()
+    numb_two = get_random_number()
     operator = random.choice('+-*')
     if operator == '+':
-        expression_result = number_one + number_two
+        op_result = numb_one + numb_two
     elif operator == '-':
-        expression_result = number_one - number_two
+        op_result = numb_one - numb_two
     else:
-        expression_result = number_one * number_two
-    return f'{number_one} {operator} {number_two}', str(expression_result)
+        op_result = numb_one * numb_two
+    return '{0} {1} {2}'.format(numb_one, operator, numb_two), str(op_result)

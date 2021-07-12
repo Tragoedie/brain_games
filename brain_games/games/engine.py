@@ -6,11 +6,11 @@ from prompt import string
 
 
 def brain_game_logic(start_str, game_function):
-    """Define even game logic.
+    """Define all game logic.
 
     Parameters:
         start_str (string): game start string.
-        game_function: function for right answer
+        game_function: function for get question and right answer
 
     Returns: basestring: user name.
     """
