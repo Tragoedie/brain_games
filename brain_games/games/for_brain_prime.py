@@ -31,4 +31,9 @@ def is_prime(number):
     Returns:
         basestring: returns expression with result.
     """
-    return 'yes' if all(number % i for i in range(2, number)) else 'no'
+    if number % 2 == 0:
+        return 'no'
+    step = 3
+    while step * step <= number and number % step != 0:
+        step += 2
+    return 'yes' if step * step > number else 'no'
