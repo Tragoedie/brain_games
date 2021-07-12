@@ -16,7 +16,7 @@ def is_prime():
         basestring: returns expression with result.
     """
     number = get_random_number()
-    if number % 2 == 0:
+    if number % 2 == 0 or number == 1:
         return number, 'no'
     step = 3
     while step * step <= number and number % step != 0:
