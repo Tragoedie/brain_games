@@ -1,23 +1,12 @@
 """This is the progression game logic."""
 
-from brain_games.games.engine import (
-    ask_question_and_get_answer,
-    ask_user_name_and_greeting,
-    get_random_number,
-    is_win_or_not,
-)
+from brain_games.games.engine import brain_game_logic, get_random_number
 
 
 def brain_progression_logic():
     """Define progression game logic."""
     start_str = 'What number is missing in the progression?.'
-    name_user, count = ask_user_name_and_greeting(start_str), 0
-    while True:
-        question, corr_ans = generate_progression()
-        user_ans = ask_question_and_get_answer(question)
-        win_or_lose, count = is_win_or_not(name_user, count, corr_ans, user_ans)
-        if win_or_lose:
-            break
+    brain_game_logic(start_str, generate_progression)
 
 
 def generate_progression():

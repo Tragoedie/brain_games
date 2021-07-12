@@ -5,18 +5,24 @@ from brain_games.scripts.brain_games import main_two
 from prompt import string
 
 
-def ask_user_name_and_greeting(start_string):
-    """Ask user name and greeting.
+def brain_game_logic(start_str, game_function):
+    """Define even game logic.
 
     Parameters:
-        start_string (string): game start string.
+        start_str (string): game start string.
+        game_function: function for right answer
 
-    Returns:
-        basestring: user name.
+    Returns: basestring: user name.
     """
     name_user = main_two()
-    print(start_string)
-    return name_user
+    print(start_str)
+    count = 0
+    while True:
+        question, corr_ans = game_function()
+        user_ans = ask_question_and_get_answer(question)
+        win_or_lose, count = is_win_or_not(name_user, count, corr_ans, user_ans)
+        if win_or_lose:
+            break
 
 
 def ask_question_and_get_answer(data_for_question):
