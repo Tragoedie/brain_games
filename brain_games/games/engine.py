@@ -35,7 +35,7 @@ def ask_question_and_get_answer(data_for_question):
         basestring: user answer.
     """
     print('Question: {0}'.format(data_for_question))
-    return string('Your answer: ')
+    return input('Your answer: ')
 
 
 def is_win_or_not(name_user, counter, correct_answer, user_answer):
