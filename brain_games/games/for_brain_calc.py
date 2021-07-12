@@ -11,9 +11,8 @@ from brain_games.games.engine import (
 
 def brain_calc_logic():
     """Define calculator game logic."""
-    name_user = ask_user_name_and_greeting()
-    print('What is the result of the expression?.')
-    count = 0
+    start_str = 'What is the result of the expression?.'
+    name_user, count = ask_user_name_and_greeting(start_str), 0
     while True:
         question, corr_ans = generate_expression()
         user_ans = ask_question_and_get_answer(question)

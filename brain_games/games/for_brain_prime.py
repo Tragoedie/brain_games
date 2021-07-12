@@ -10,9 +10,8 @@ from brain_games.games.engine import (
 
 def brain_prime_logic():
     """Define prime game logic."""
-    name_user = ask_user_name_and_greeting()
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    count = 0
+    start_str = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    name_user, count = ask_user_name_and_greeting(start_str), 0
     while True:
         question = get_random_number()
         user_ans = ask_question_and_get_answer(question)

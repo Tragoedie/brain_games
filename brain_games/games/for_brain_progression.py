@@ -10,9 +10,8 @@ from brain_games.games.engine import (
 
 def brain_progression_logic():
     """Define progression game logic."""
-    name_user = ask_user_name_and_greeting()
-    print('What number is missing in the progression?.')
-    count = 0
+    start_str = 'What number is missing in the progression?.'
+    name_user, count = ask_user_name_and_greeting(start_str), 0
     while True:
         question, corr_ans = generate_progression()
         user_ans = ask_question_and_get_answer(question)

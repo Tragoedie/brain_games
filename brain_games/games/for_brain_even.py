@@ -9,9 +9,8 @@ from brain_games.games.engine import (
 
 def brain_even_logic():
     """Define even game logic."""
-    name_user = ask_user_name_and_greeting()
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    count = 0
+    start_str = 'Answer "yes" if the number is even, otherwise answer "no".'
+    name_user, count = ask_user_name_and_greeting(start_str), 0
     while True:
         question = get_random_number()
         user_ans = ask_question_and_get_answer(question)

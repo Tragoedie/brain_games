@@ -5,13 +5,18 @@ from brain_games.scripts.brain_games import main_two
 from prompt import string
 
 
-def ask_user_name_and_greeting():
+def ask_user_name_and_greeting(start_string):
     """Ask user name and greeting.
+
+    Parameters:
+        start_string (string): game start string.
 
     Returns:
         basestring: user name.
     """
-    return main_two()
+    name_user = main_two()
+    print(start_string)
+    return name_user
 
 
 def ask_question_and_get_answer(data_for_question):
