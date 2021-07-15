@@ -1,7 +1,5 @@
 """This is the common games logic."""
-from random import randint
-
-from brain_games.scripts.brain_games import main_two
+from prompt import string
 
 
 def brain_game_logic(start_str, game_function):
@@ -13,28 +11,18 @@ def brain_game_logic(start_str, game_function):
 
     Returns: basestring: user name.
     """
-    name_user = main_two()
+    print('Welcome to the Brain Games!')
+    name_user = string('May I have your name? ')
+    print('Hello, {0}!'.format(name_user))
     print(start_str)
     count = 0
     while True:
         question, corr_ans = game_function()
-        user_ans = ask_question_and_get_answer(question)
+        print('Question: {0}'.format(question))
+        user_ans = string('Your answer: ')
         win_or_lose, count = is_win_or_not(name_user, count, corr_ans, user_ans)
         if win_or_lose:
             break
-
-
-def ask_question_and_get_answer(data_for_question):
-    """Print question in console and get user answer.
-
-    Parameters:
-        data_for_question (string): game question to user.
-
-    Returns:
-        basestring: user answer.
-    """
-    print('Question: {0}'.format(data_for_question))
-    return input('Your answer: ')
 
 
 def is_win_or_not(name_user, counter, correct_answer, user_answer):
@@ -50,7 +38,7 @@ def is_win_or_not(name_user, counter, correct_answer, user_answer):
         bool: is game finished?
     """
     right_answer = is_right_answer(name_user, correct_answer, user_answer)
-    if right_answer is False:
+    if not right_answer:
         return True, counter
     elif counter < 2:
         return False, counter + 1
@@ -76,16 +64,3 @@ def is_right_answer(name_user, corr_answer, user_answer):
     print(f'Correct answer was "{corr_answer}".')
     print(f"Let's try again, {name_user}!")
     return False
-
-
-def get_random_number(left_border=1, right_border=100):
-    """Get random number.
-
-    Parameters:
-        left_border (int): left border.
-        right_border (int): right border.
-
-    Returns:
-        integer number: random number
-    """
-    return randint(left_border, right_border)
