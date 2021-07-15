@@ -25,11 +25,11 @@ def generate_progression():
         else:
             array_progression.append(str(number))
         number += difference_of_progress
-    corr_answer = get_correct_answer(start_number, difference_of_progress, miss_index)
-    return ' '.join(array_progression), str(corr_answer)
+    corr_ans = get_cor_ans(start_number, difference_of_progress, miss_index + 1)
+    return ' '.join(array_progression), str(corr_ans)
 
 
-def get_correct_answer(start, step, number):
+def get_cor_ans(start, step, number):
     """Calculate the formula for a member of a mathematical progression.
 
     Parameters:
