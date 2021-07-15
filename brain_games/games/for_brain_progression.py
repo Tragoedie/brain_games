@@ -17,13 +17,26 @@ def generate_progression():
     number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
     difference_of_progress = randint(LEFT_BORDER_DIFF, RIGHT_BORDER_DIFF)
     miss_index = randint(LEFT_BORDER_NUMBER, LENGTH_PROGR - 1)
-    corr_answer = 0
     array_progression = []
     for numb in range(LENGTH_PROGR):
         if numb == miss_index:
             array_progression.append('..')
-            corr_answer = str(number)
         else:
             array_progression.append(str(number))
         number += difference_of_progress
-    return ' '.join(array_progression), corr_answer
+    corr_answer = get_correct_answer(number, difference_of_progress, miss_index)
+    return ' '.join(array_progression), str(corr_answer)
+
+
+def get_correct_answer(start, step, number):
+    """Calculate the formula for a member of a mathematical progression.
+
+    Parameters:
+        start (int): first number of a mathematical progression.
+        step (int): difference of a mathematical progression.
+        number (int): number n-member of a mathematical progression.
+
+    Returns:
+        n-member of a mathematical progression.
+    """
+    return start + step * (number - 1)
