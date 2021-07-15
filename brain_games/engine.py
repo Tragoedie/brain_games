@@ -20,7 +20,7 @@ def brain_game_logic(start_str, game_function):
         question, corr_ans = game_function()
         print('Question: {0}'.format(question))
         user_ans = string('Your answer: ')
-        if corr_ans == user_ans and count <= 2:
+        if corr_ans == user_ans:
             print('Correct!')
             count += 1
             continue
