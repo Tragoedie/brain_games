@@ -14,17 +14,18 @@ def generate_progression():
     Returns:
         basestring: returns progression string with result.
     """
-    number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
+    start_number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
     difference_of_progress = randint(LEFT_BORDER_DIFF, RIGHT_BORDER_DIFF)
     miss_index = randint(LEFT_BORDER_NUMBER, LENGTH_PROGR - 1)
     array_progression = []
+    number = start_number
     for numb in range(LENGTH_PROGR):
         if numb == miss_index:
             array_progression.append('..')
         else:
             array_progression.append(str(number))
         number += difference_of_progress
-    corr_answer = get_correct_answer(number, difference_of_progress, miss_index)
+    corr_answer = get_correct_answer(start_number, difference_of_progress, miss_index)
     return ' '.join(array_progression), str(corr_answer)
 
 
