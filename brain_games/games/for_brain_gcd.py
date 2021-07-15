@@ -1,13 +1,9 @@
 """This is the NOD game logic."""
 from math import gcd
+from random import randint
 
-from brain_games.games.engine import brain_game_logic, get_random_number
-
-
-def brain_gcd_logic():
-    """Define NOD game logic."""
-    start_str = 'Find the greatest common divisor of given numbers.'
-    brain_game_logic(start_str, generate_expression)
+LEFT_BORDER_NUMBER = 1
+RIGHT_BORDER_NUMBER = 100
 
 
 def generate_expression():
@@ -16,6 +12,6 @@ def generate_expression():
     Returns:
         basestring: returns expression with result.
     """
-    number_one = get_random_number()
-    number_two = get_random_number()
+    number_one = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
+    number_two = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
     return f'{number_one} {number_two}', str(gcd(number_one, number_two))

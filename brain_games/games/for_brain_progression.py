@@ -1,12 +1,11 @@
 """This is the progression game logic."""
+from random import randint
 
-from brain_games.games.engine import brain_game_logic, get_random_number
-
-
-def brain_progression_logic():
-    """Define progression game logic."""
-    start_str = 'What number is missing in the progression?.'
-    brain_game_logic(start_str, generate_progression)
+LENGTH_PROGR = 10
+LEFT_BORDER_NUMBER = 1
+RIGHT_BORDER_NUMBER = 100
+LEFT_BORDER_DIFF = 1
+RIGHT_BORDER_DIFF = 10
 
 
 def generate_progression():
@@ -15,13 +14,12 @@ def generate_progression():
     Returns:
         basestring: returns progression string with result.
     """
-    number = get_random_number()
-    length_prog = 10
-    difference_of_progress = get_random_number(left_border=1, right_border=10)
-    miss_index = get_random_number(left_border=0, right_border=length_prog - 1)
+    number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
+    difference_of_progress = randint(LEFT_BORDER_DIFF, RIGHT_BORDER_DIFF)
+    miss_index = randint(LEFT_BORDER_NUMBER, LENGTH_PROGR - 1)
     corr_answer = 0
     array_progression = []
-    for numb in range(length_prog):
+    for numb in range(LENGTH_PROGR):
         if numb == miss_index:
             array_progression.append('..')
             corr_answer = str(number)

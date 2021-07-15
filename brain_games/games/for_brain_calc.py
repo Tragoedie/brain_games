@@ -1,13 +1,11 @@
 """This is the calculator game logic."""
-import random
+from random import choice, randint
 
-from brain_games.games.engine import brain_game_logic, get_random_number
-
-
-def brain_calc_logic():
-    """Define calculator game logic."""
-    start_str = 'What is the result of the expression?.'
-    brain_game_logic(start_str, generate_expression)
+LEFT_BORDER_NUMBER = 1
+RIGHT_BORDER_NUMBER = 100
+OPERATOR_ADD = '+'
+OPERATOR_SUBSTRACT = '-'
+OPERATOR_MULTIPLY = '*'
 
 
 def generate_expression():
@@ -16,12 +14,13 @@ def generate_expression():
     Returns:
         basestring: returns expression with result.
     """
-    numb_one = get_random_number()
-    numb_two = get_random_number()
-    operator = random.choice('+-*')
-    if operator == '+':
+    numb_one = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
+    numb_two = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
+    string_operator = (OPERATOR_ADD, OPERATOR_SUBSTRACT, OPERATOR_MULTIPLY)
+    operator = choice(string_operator)
+    if operator == OPERATOR_ADD:
         op_result = numb_one + numb_two
-    elif operator == '-':
+    elif operator == OPERATOR_SUBSTRACT:
         op_result = numb_one - numb_two
     else:
         op_result = numb_one * numb_two

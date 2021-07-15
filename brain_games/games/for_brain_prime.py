@@ -1,12 +1,8 @@
 """This is the prime game logic."""
+from random import randint
 
-from brain_games.games.engine import brain_game_logic, get_random_number
-
-
-def brain_prime_logic():
-    """Define prime game logic."""
-    start_str = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    brain_game_logic(start_str, is_prime)
+LEFT_BORDER_NUMBER = 1
+RIGHT_BORDER_NUMBER = 100
 
 
 def is_prime():
@@ -15,7 +11,7 @@ def is_prime():
     Returns:
         basestring: returns expression with result.
     """
-    number = get_random_number()
+    number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
     if number % 2 == 0 or number == 1:
         return number, 'no'
     step = 3

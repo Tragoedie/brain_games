@@ -1,12 +1,8 @@
 """This is the even game logic."""
+from random import randint
 
-from brain_games.games.engine import brain_game_logic, get_random_number
-
-
-def brain_even_logic():
-    """Define even game logic."""
-    start_str = 'Answer "yes" if given number is even. Otherwise answer "no".'
-    brain_game_logic(start_str, is_parity)
+LEFT_BORDER_NUMBER = 1
+RIGHT_BORDER_NUMBER = 100
 
 
 def is_parity():
@@ -15,5 +11,5 @@ def is_parity():
     Returns:
         basestring: returns expression with result.
     """
-    number = get_random_number()
+    number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
     return number, 'yes' if number % 2 == 0 else 'no'
