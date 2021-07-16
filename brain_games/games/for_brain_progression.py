@@ -14,19 +14,13 @@ def generate_progression():
     Returns:
         basestring: returns progression string with result.
     """
-    start_number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
-    difference_of_progress = randint(LEFT_BORDER_DIFF, RIGHT_BORDER_DIFF)
+    number = randint(LEFT_BORDER_NUMBER, RIGHT_BORDER_NUMBER)
+    step = randint(LEFT_BORDER_DIFF, RIGHT_BORDER_DIFF)
     miss_index = randint(LEFT_BORDER_NUMBER, LENGTH_PROGR - 1)
-    array_progression = []
-    number = start_number
-    for numb in range(LENGTH_PROGR):
-        if numb == miss_index:
-            array_progression.append('..')
-        else:
-            array_progression.append(str(number))
-        number += difference_of_progress
-    corr_ans = get_cor_ans(start_number, difference_of_progress, miss_index + 1)
-    return ' '.join(array_progression), str(corr_ans)
+    array = [str(number + step * (numb - 1)) for numb in range(LENGTH_PROGR)]
+    array[miss_index] = '..'
+    corr_ans = get_cor_ans(number, step, miss_index)
+    return ' '.join(array), str(corr_ans)
 
 
 def get_cor_ans(start, step, number):

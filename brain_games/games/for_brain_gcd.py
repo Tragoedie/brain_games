@@ -5,7 +5,7 @@ LEFT_BORDER_NUMBER = 0
 RIGHT_BORDER_NUMBER = 100
 
 
-def generate_expression():
+def generate_nod_numbers():
     """Generate mathematical expression.
 
     Returns:
