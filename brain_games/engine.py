@@ -13,7 +13,8 @@ def brain_game_logic(start_str, game_function):
     """
     print('Welcome to the Brain Games!')
     name_user = string('May I have your name? ')
-    print('Hello, {0}!'.format(name_user), '\n', start_str)
+    print('Hello, {0}!'.format(name_user))
+    print(start_str)
     count = 0
     while count < 3:
         question, corr_ans = game_function()
