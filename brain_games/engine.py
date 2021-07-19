@@ -1,32 +1,34 @@
 """This is the common games logic."""
-from prompt import string
+import prompt
+
+CORRECT_ANSWERS_TO_WIN = 3
 
 
-def brain_game_logic(start_str, game_function):
+def brain_game_logic(game_pack):
     """Define all game logic.
 
     Parameters:
-        start_str (string): game start string.
-        game_function: function for get question and right answer
+        game_pack: this is game logic package
 
-    Returns: basestring: user name.
     """
     print('Welcome to the Brain Games!')
-    name_user = string('May I have your name? ')
-    print('Hello, {0}!'.format(name_user))
-    print(start_str)
-    count = 0
-    while count < 3:
-        question, corr_ans = game_function()
+    user_name = prompt.string('May I have your name? ')
+    print('Hello, {0}!'.format(user_name))
+    print(game_pack.get_start_game_string())
+    right_answer_counter = 0
+    while right_answer_counter < CORRECT_ANSWERS_TO_WIN:
+        question, correct_answer = game_pack.get_question_and_correct_answer()
         print('Question: {0}'.format(question))
-        user_ans = string('Your answer: ')
-        if corr_ans != user_ans:
+        user_answer = prompt.string('Your answer: ')
+        if correct_answer != user_answer:
             break
         print('Correct!')
-        count += 1
-    if count == 3:
-        print(f'Congratulations, {name_user}!')
+        right_answer_counter += 1
+    if right_answer_counter == CORRECT_ANSWERS_TO_WIN:
+        print('Congratulations, {0}!'.format(user_name))
     else:
-        print(f'"{user_ans}" is wrong answer ;(.', end='')
-        print(f'Correct answer was "{corr_ans}".')
-        print(f"Let\'s try again, {name_user}!")
+        print(
+            '"{0}" is wrong answer ;(. Correct answer was "{1}".'.
+            format(user_answer, correct_answer),
+        )
+        print("Let\'s try again, {0}!".format(user_name))

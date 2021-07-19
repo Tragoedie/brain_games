@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """This is start Even game."""
-from brain_games.engine import brain_game_logic
-from brain_games.games.for_brain_even import is_parity
+from brain_games import engine
+from brain_games.games import brain_even_game
 
 
 def main():
     """Start Even game."""
-    start_str = 'Answer "yes" if given number is even. Otherwise answer "no".'
-    brain_game_logic(start_str, is_parity)
+    engine.brain_game_logic(brain_even_game)
 
 
 if __name__ == '__main__':
